@@ -6,7 +6,9 @@ const router = express.Router()
 
 // get a list of bus from the db
 router.get('/bus', (req, res, next) => {
-  res.send({ type: 'GET' })
+  Bus.find().then(buses => {
+    res.send(buses)
+  })
 })
 
 // add a new bus to the db

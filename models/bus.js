@@ -1,38 +1,32 @@
 const mongoose = require('mongoose')
 
+const Station = require('./station').schema
+const Transporter = require('./transporter').schema
+
 const Schema = mongoose.Schema
 
-// create bus-station Schema
-const BusStationSchema = new Schema({
-  name: {
-    type: String,
-    required: true
-  }
-})
-
-// create bus Schema
 const BusSchema = new Schema({
   name: {
     type: String,
     required: true
   },
   transporter: {
-    type: String,
+    type: Transporter,
     required: true
   },
   from: {
-    type: BusStationSchema,
+    type: Station,
     required: true
   },
   to: {
-    type: BusStationSchema,
+    type: Station,
     required: true
   },
   via: {
-    type: BusStationSchema
+    type: Station
   },
   stations: {
-    type: [BusStationSchema],
+    type: [Station],
     required: true
   }
 })
