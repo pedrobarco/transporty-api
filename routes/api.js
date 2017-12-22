@@ -6,9 +6,13 @@ const router = express.Router()
 
 // get a list of bus from the db
 router.get('/bus', (req, res, next) => {
-  Bus.find().then(buses => {
-    res.send(buses)
-  })
+  Bus.find()
+    .sort('name')
+    .limit(req.query.res)
+    .skip(req.query.res * (req.query.page - 1))
+    .then(buses => {
+      res.send({ results: buses })
+    })
 })
 
 // add a new bus to the db

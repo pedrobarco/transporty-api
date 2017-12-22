@@ -10,22 +10,15 @@ const BusSchema = new Schema({
     type: String,
     required: true
   },
+  route: {
+    type: String,
+    required: true
+  },
   transporter: {
     type: Transporter,
     required: true
   },
-  from: {
-    type: Station,
-    required: true
-  },
-  to: {
-    type: Station,
-    required: true
-  },
-  via: {
-    type: Station
-  },
-  stations: {
+  stops: {
     type: [Station],
     required: true
   }

@@ -11,7 +11,7 @@ const app = express()
 mongoose.connect(config.mongodb.uris, { useMongoClient: true })
 mongoose.Promise = global.Promise
 
-app.use(bodyParser.json())
+app.use(bodyParser.json({limit: '5mb'}))
 
 // initialize routes
 app.use('/api', routes)
