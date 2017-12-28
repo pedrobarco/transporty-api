@@ -21,6 +21,6 @@ app.use((err, req, res, next) => {
   res.status(422).send({ error: err.message })
 })
 
-app.listen(process.env.port || config.express.port, () => {
-  console.log('Now listening for requests')
+app.listen(config.express.port, () => {
+  console.log(`Listening on port ${config.express.port}!`)
 })

@@ -5,7 +5,7 @@ config.express = {
 }
 
 config.mongodb = {
-  uris: 'mongodb://localhost/transporty'
+  uris: 'mongodb://mongo:27017'
 }
 
 module.exports = config
