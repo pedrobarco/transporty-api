@@ -1,11 +1,11 @@
-version: '2'
+version: '3'
 services:
   web:
     build: .
     volumes:
       - './:/app'
     ports:
-      - '1918:1918'
+      - '3000:3000'
     links:
       - mongo
   mongo:

@@ -1,4 +1,4 @@
-FROM node:argon
+FROM node
 
 RUN mkdir /app
 WORKDIR /app
@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . /app
 
-EXPOSE 1918
+EXPOSE 3000
 
 CMD ["npm", "start"]

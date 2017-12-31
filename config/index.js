@@ -1,11 +1,11 @@
 const config = {}
 
 config.express = {
-  port: 1918
+  port: 3000
 }
 
 config.mongodb = {
-  uris: 'mongodb://mongo:27017'
+  uris: 'mongodb://mongo/transporty'
 }
 
 module.exports = config
