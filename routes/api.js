@@ -6,7 +6,9 @@ const router = express.Router()
 
 // get a list of bus from the db
 router.get('/bus', (req, res, next) => {
-  Bus.find()
+  const regex = { 'name': new RegExp(req.query.search + '.*', 'i') }
+  const filter = req.query.search ? regex : {}
+  Bus.find(filter)
     .sort('name')
     .limit(parseInt(req.query.res))
     .skip(req.query.res * (req.query.page - 1))
