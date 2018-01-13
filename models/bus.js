@@ -21,6 +21,10 @@ const BusSchema = new Schema({
   stops: {
     type: [Station],
     required: true
+  },
+  timetable: {
+    type: String,
+    required: true
   }
 })
 
